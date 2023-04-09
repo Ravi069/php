@@ -1,6 +1,12 @@
 <?php
 require "connectToDatabase.php";
 
+if($_POST["update"]==""){
+  echo "</br>";
+  echo "No Records Found To Update";
+  exit;
+}
+
 $sql="UPDATE students SET department='CS' WHERE id='$_POST[update]'";
 
 if ($conn->query($sql) === TRUE) {
@@ -11,6 +17,4 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-
 ?>
-
