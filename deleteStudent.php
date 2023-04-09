@@ -1,6 +1,12 @@
 <?php
 require "connectToDatabase.php";
 
+if($_POST["delete"]==""){
+  echo "</br>";
+  echo "No Records Found To Delete";
+  exit;
+}
+
 $sql="DELETE FROM students WHERE id='$_POST[delete]'";
 
 if ($conn->query($sql) === TRUE) {
@@ -11,6 +17,4 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-
 ?>
-
