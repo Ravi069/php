@@ -1,7 +1,13 @@
 <?php
 require "connectToDatabase.php";
 
-$sql="INSERT INTO students (student_name, department)
+if(($_POST["student_name"]=="") || ($_POST["department"]=="")){
+  echo "</br>";
+  echo "No Records Found To Add";
+  exit;
+}
+
+$sql="INSERTs INTO students (student_name, department)
 VALUES ('$_POST[student_name]', '$_POST[department]')";
 
 if ($conn->query($sql) === TRUE) {
@@ -12,6 +18,4 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-
 ?>
-
