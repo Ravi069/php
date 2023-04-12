@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #adding_student,
+      #searching,
+      #updating,
+      #deleting {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="addingStudents()">Add Student</button>
+    <button onclick="searchStudents()">Search Student</button>
+    <button onclick="updateStudentDetails()">Update Student Detalis</button>
+    <button onclick="deleteStudent()">Delete Student</button>
+
+    <div id="adding_student">
+      <form action="add_student.php" method="post">
+        Name: <input type="text" name="student_name" /> Department:
+        <input type="text" name="department" />
+        <input type="submit" value="Add" />
+      </form>
+    </div>
+
+    <div id="searching">
+      <form action="searchStudents.php" method="get">
+        Search Students By Department <input type="text" name="search" />
+        <input type="submit" value="Search" />
+      </form>
+    </div>
+
+    <div id="updating">
+      <form action="updateStudent.php" method="post">
+        Update Student Department By Id<input type="text" name="update" />
+        <input type="submit" value="Update" />
+      </form>
+    </div>
+
+    <div id="deleting">
+      <form action="deleteStudent.php" method="post">
+        Delete Student By ID<input type="text" name="delete" />
+        <input type="submit" value="Delete" />
+      </form>
+    </div>
+
+    <script>
+      function addingStudents() {
+        var divi = document.getElementById("adding_student");
+
+        if (divi.style.display === "none" || divi.style.display === "") {
+          divi.style.display = "block";
+        } else {
+          divi.style.display = "none";
+        }
+      }
+      function searchStudents() {
+        var xxx = document.getElementById("searching");
+
+        if (xxx.style.display === "none" || xxx.style.display === "") {
+          xxx.style.display = "block";
+        } else {
+          xxx.style.display = "none";
+        }
+      }
+
+      function updateStudentDetails() {
+        var yy = document.getElementById("updating");
+
+        if (yy.style.display === "none" || yy.style.display === "") {
+          yy.style.display = "block";
+        } else {
+          yy.style.display = "none";
+        }
+      }
+
+      function deleteStudent() {
+        var yyy = document.getElementById("deleting");
+
+        if (yyy.style.display === "none" || yyy.style.display === "") {
+          yyy.style.display = "block";
+        } else {
+          yyy.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
